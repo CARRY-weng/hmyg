@@ -1,5 +1,5 @@
 swiper{
-    height: 339.984375rpx;
+    height: 340rpx;
     
 }
 .searchInput_warp{
@@ -9,12 +9,12 @@ swiper{
 .navigation_warp{
     margin-top: 10px;
     display: flex;
-    justify-content: space-around;
+    text-align: center;
 }
 .navigation{
-    
-    width: 60px;
+    flex: 1;
+    width: 120rpx;
 }
 .navigation_img{
-    
+    width: 70%;
 }
