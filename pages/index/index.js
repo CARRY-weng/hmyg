@@ -2,10 +2,11 @@
 Page({
     data:{
         swiperList:[],  //轮播图数据
-        navigationList:[]  //导航栏数据
+        navigationList:[],  //导航栏数据
+        floorList:[]  //楼层数据
     },
     onLoad(){
-        //获取轮播图的请求
+        //1.获取轮播图的请求
         wx.request({
             url: 'https://api.zbztb.cn/api/public/v1/home/swiperdata',
             success: (result) => {
@@ -17,7 +18,7 @@ Page({
             }
         });
 
-        //获取导航数据请求
+        //2.获取导航数据请求
         wx.request({
              url: 'https://api.zbztb.cn/api/public/v1/home/catitems',
              success: (result) => {
@@ -29,14 +30,16 @@ Page({
              }
          });
 
-        //  //获取楼层数据请求
-        //  wx.request({
-        //      url: 'https://api.zbztb.cn/api/public/v1/home/floordata',
-        //      success: (result) => {
-        //          console.log(result);
-                 
-        //      }
-        //  });
+         //3.获取楼层数据请求
+         wx.request({
+             url: 'https://api.zbztb.cn/api/public/v1/home/floordata',
+             success: (result) => {
+                //  console.log(result.data.message);
+                 this.setData({
+                    floorList:result.data.message
+                 })
+             }
+         });
            
             
     }
