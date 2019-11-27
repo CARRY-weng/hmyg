@@ -2,6 +2,7 @@
 page,view,text,image,button,input{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 /* 图片的所有宽度都是百分百的 */
 image{
