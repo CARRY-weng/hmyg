@@ -1,8 +1,8 @@
 
-<view class="search" >
-  <text class="icon-shoucang1"></text>
-     搜索
-</view>  
+<navigator class="search" target="" url="" hover-class="navigator-hover" open-type="navigate">
+    🔍搜索
+</navigator>
+  
   
 
   
