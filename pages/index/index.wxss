@@ -1,20 +1,43 @@
-swiper{
-    height: 340rpx;
-    
+swiper {
+  height: 340rpx;
 }
-.searchInput_warp{
-    background: #eb4450;
-    padding: 5px 10px;
+.searchInput_warp {
+  background: #eb4450;
+  padding: 5px 10px;
 }
-.navigation_warp{
-    margin-top: 10px;
-    display: flex;
-    text-align: center;
+.navigation_warp {
+  margin-top: 10px;
+  display: flex;
+  text-align: center;
 }
-.navigation{
-    flex: 1;
-    width: 120rpx;
+.navigation {
+  flex: 1;
+  width: 120rpx;
 }
-.navigation_img{
-    width: 70%;
+.navigation_img {
+  width: 70%;
+}
+.floor_warp {
+  overflow: hidden;
+}
+.floor_warp .floor_title {
+  padding-top: 10px;
+}
+.floor_warp .floor_content {
+  /* 后4个超链接 */
+}
+.floor_warp .floor_content .floor_nav {
+  float: left;
+  width: 33.33%;
+}
+.floor_warp .floor_content .floor_nav image {
+  /* 去除图片默认的3px间隙！！！ */
+  display: block;
+  border: 2px solid white;
+}
+.floor_warp .floor_content .floor_nav:nth-last-child(-n + 4) {
+  /* 后面的四张图片的高度是第一张图片高度的一半 */
+}
+.floor_warp .floor_content .floor_nav:nth-last-child(-n + 4) image {
+  height: 203.97413793rpx;
 }

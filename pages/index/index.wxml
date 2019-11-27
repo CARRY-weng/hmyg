@@ -25,17 +25,34 @@
   <!-- 导航   结束 -->
 
   <!-- 楼层   -->
-  <!-- <view class="floor_warp" wx:for="{{floorList}}" wx:key="floor_title.name">
+  <view class="floor_warp" wx:for="{{floorList}}" wx:for-item='item1' wx:for-index="index1" wx:key="floor_title.name">
+    <!-- 标题 -->
     <view class="floor_title">
-      <image class="title_img" src="{{item.floor_title.image_src}}" mode="widthFix"/>
+      <image class="title_img" src="{{item1.floor_title.image_src}}" mode="widthFix"/>
+    </view>
+    <!-- 内容 -->
+    <view class="floor_content">
+      <!-- 每个图片都是一个超链接 -->
+      <navigator 
+      wx:for='{{item1.product_list}}' 
+      wx:for-item="item2" 
+      wx:for-index="index2" 
+      wx:key="name" 
+      class="floor_nav" 
+      url="{{item2.navigator_url}}" 
+      open-type="{{item2.open_type}}">
+        <!-- 楼层内容 图片 -->
+        <image 
+        class="floor_img" 
+        src="{{item2.image_src}}" 
+        mode="{{index2===0? 'widthFix' : 'scaleToFill'}}" />
+          
+      </navigator>
         
     </view>
-    <view class="floor_content">
-      
-    </view>
       
       
-  </view> -->
+  </view>
     
 </view>
   

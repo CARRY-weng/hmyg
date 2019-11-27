@@ -1,0 +1,48 @@
+swiper{
+    height: 340rpx;
+    
+}
+.searchInput_warp{
+    background: #eb4450;
+    padding: 5px 10px;
+}
+.navigation_warp{
+    margin-top: 10px;
+    display: flex;
+    text-align: center;
+}
+.navigation{
+    flex: 1;
+    width: 120rpx;
+}
+.navigation_img{
+    width: 70%;
+}
+
+//楼层样式
+.floor_warp{  //楼层外壳
+    // padding-top: 10px;
+    overflow: hidden;
+    .floor_title{
+        padding-top: 10px;
+        
+    }  //楼层标题
+    .floor_content{  //楼层内容
+        .floor_nav{  //楼层超链接
+            float: left;
+            width: 33.33%;  //五张图片分割成三分
+            image { //楼层图片
+                /* 去除图片默认的3px间隙！！！ */
+                display: block;
+                border: 2px solid white;
+            }
+        }
+        /* 后4个超链接 */
+        .floor_nav:nth-last-child(-n + 4){
+            /* 后面的四张图片的高度是第一张图片高度的一半 */
+            image{
+                height: (750rpx/3 * 386 /232 / 2)-4; //加1是为了除去那个小间隙
+            }
+        }
+    } 
+}
