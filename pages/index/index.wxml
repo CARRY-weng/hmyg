@@ -4,25 +4,38 @@
   <view class='searchInput_warp'>
     <searchInput></searchInput>
   </view>
-  <!-- 轮播图 -->
+  <!-- 轮播图 开始-->
   <view class='swiper_warp'>	
     <swiper indicator-dots autoplay interval="2000" circular >
-      <swiper-item wx:for='{{swiperList}}' wx:key='{{item.goods_id}}'>
+      <swiper-item wx:for='{{swiperList}}' wx:key='goods_id'>
         <image class="swiper_img" src="{{item.image_src}}" mode="widthFix" />
 					
       </swiper-item>
     </swiper>
   </view>
-  <!-- 导航    -->
+  <!-- 轮播图 结束-->
+
+  <!-- 导航   开始 -->
   <view class="navigation_warp">
-    <view class="navigation" wx:for="{{navigationList}}" wx:key="{{item.anme}}">
+    <navigator class="navigation" wx:for="{{navigationList}}" wx:key="anme" open-type="{{item.open_type}}" url="{{item.navigator_url}}">
       <image class="navigation_img" src="{{item.image_src}}" mode="widthFix" />
-    </view>    
+    </navigator>  
+      
   </view>
+  <!-- 导航   结束 -->
+
   <!-- 楼层   -->
-  <view class="floor_warp">
-    
-  </view>
+  <!-- <view class="floor_warp" wx:for="{{floorList}}" wx:key="floor_title.name">
+    <view class="floor_title">
+      <image class="title_img" src="{{item.floor_title.image_src}}" mode="widthFix"/>
+        
+    </view>
+    <view class="floor_content">
+      
+    </view>
+      
+      
+  </view> -->
     
 </view>
   
