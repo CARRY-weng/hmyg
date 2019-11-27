@@ -2,3 +2,19 @@ swiper{
     height: 339.984375rpx;
     
 }
+.searchInput_warp{
+    background: #eb4450;
+    padding: 5px 10px;
+}
+.navigation_warp{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.navigation{
+    
+    width: 60px;
+}
+.navigation_img{
+    
+}
