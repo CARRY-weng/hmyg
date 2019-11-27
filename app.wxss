@@ -1,3 +1,4 @@
+@import '../hmyg/styles/iconfont.wxss';
 page,view,text,image,button,input{
     margin: 0;
     padding: 0;
