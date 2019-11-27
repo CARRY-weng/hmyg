@@ -1,2 +1,10 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+
+
+<view>
+    <!-- 搜索 -->
+    <view class='searchInput_warp'>
+        <searchInput></searchInput>
+    </view>
+      
+    
+</view>

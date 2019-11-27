@@ -1,1 +1,4 @@
-/* pages/category/index.wxss */
+.searchInput_warp {
+  background: #eb4450;
+  padding: 5px 10px;
+}

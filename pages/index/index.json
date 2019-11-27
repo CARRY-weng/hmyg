@@ -2,8 +2,5 @@
   "usingComponents": {
     "searchInput":"/components/search/searchInput"
   },
-  "navigationBarBackgroundColor": "#eb4450",
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "首页",
-  "backgroundTextStyle": "dark"
+  "navigationBarTitleText": "首页"
 }
