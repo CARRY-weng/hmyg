@@ -1,9 +1,7 @@
 
 <view>
   <!-- 搜索 -->
-  <view class='searchInput_warp'>
     <searchInput></searchInput>
-  </view>
   <!-- 轮播图 开始-->
   <view class='swiper_warp'>	
     <swiper indicator-dots autoplay interval="2000" circular >
