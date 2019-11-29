@@ -5,7 +5,7 @@
 /* 外壳 */
 .warp {
   display: flex;
-  height: calc(100vh - 68rpx);
+  height: calc(100vh - 80rpx);
   /* 左边导航栏样式 */
   /* 右边内容样式 */
 }

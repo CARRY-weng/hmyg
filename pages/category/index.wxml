@@ -1,9 +1,7 @@
 
 <view>
     <!-- 搜索 -->
-    <view class='searchInput_warp'>
         <searchInput></searchInput>
-    </view>
     <!-- 内容 -->
     <view class='warp'>
         <!-- 左边导航 -->
@@ -35,7 +33,8 @@
                 </view>
                 <!-- 孩子的孩子 -->
                 <view class='itemContent'> 
-                    <view 
+                    <navigator 
+                    url='/pages/goods_list/index'
                     class="producyItem" 
                     wx:for='{{item2.children}}'
                     wx:for-item='item3'
@@ -49,7 +48,7 @@
                         <view class="childrenName">
                             {{item3.cat_name}}
                         </view>
-                    </view>
+                    </navigator>
                 </view>
             </view>
               
