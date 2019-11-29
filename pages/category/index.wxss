@@ -2,3 +2,53 @@
   background: #eb4450;
   padding: 5px 10px;
 }
+/* 外壳 */
+.warp {
+  display: flex;
+  height: calc(100vh - 68rpx);
+  /* 左边导航栏样式 */
+  /* 右边内容样式 */
+}
+.warp .left {
+  width: 200rpx;
+  overflow: auto;
+}
+.warp .left .leftItem {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+.warp .right {
+  flex: 1;
+  overflow: auto;
+  font-size: 28rpx;
+}
+.warp .right .rightItem {
+  /* 标题 */
+  /* 孩子的孩子 */
+}
+.warp .right .rightItem .itemTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+  text-align: center;
+}
+.warp .right .rightItem .itemContent {
+  display: flex;
+  flex-wrap: wrap;
+}
+.warp .right .rightItem .itemContent .producyItem {
+  text-align: center;
+  width: 33.33%;
+}
+.warp .right .rightItem .itemContent .producyItem .childrenImg {
+  width: 50%;
+}
+.warp .right .rightItem .itemContent .producyItem .childrenName {
+  text-align: center;
+}
+.warp .scroll_left {
+  height: 500px;
+}
