@@ -1,3 +1,8 @@
+.searchInput_warp {
+  background: #eb4450;
+  padding: 5px 10px;
+  height:80rpx;
+}
 .search{
     /* 设计稿为375 的时候 1px = 2rpx */
     background: #fff;

@@ -1,7 +1,10 @@
-
-<navigator class="search" target="" url="" hover-class="navigator-hover" open-type="navigate">
-    🔍搜索
-</navigator>
+<view class="searchInput_warp">
+    <navigator class="search" target="" url="" hover-class="navigator-hover" open-type="navigate">
+        🔍搜索
+    </navigator>
+    
+</view>
+  
   
   
 
