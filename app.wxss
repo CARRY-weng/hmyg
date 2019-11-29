@@ -1,5 +1,16 @@
 @import '/styles/iconfont.wxss';
-page,view,text,image,button,input{
+page,
+view,
+text,
+image,
+button,
+input,
+swiper,
+swiper-item,
+navigator,
+checkbox,
+rich-text,
+radio {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,4 +18,8 @@ page,view,text,image,button,input{
 /* 图片的所有宽度都是百分百的 */
 image{
     width: 100%;
+}
+/* 主题颜色变量 */
+page{
+    --themeColor:#eb4450;
 }
