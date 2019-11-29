@@ -9,7 +9,7 @@
         <!-- 左边导航 -->
         <view class="left">
             <view 
-            class="leftItem" 
+            class="leftItem {{catIndex===index1? 'active' : ''}}" 
             wx:for='{{catList}}' 
             wx:key='cat_id' 
             wx:for-item='item1'

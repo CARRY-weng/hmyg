@@ -9,6 +9,10 @@
   /* 左边导航栏样式 */
   /* 右边内容样式 */
 }
+.warp .active {
+  color: #eb4450;
+  border-left: 1px solid #eb4450;
+}
 .warp .left {
   width: 200rpx;
   overflow: auto;

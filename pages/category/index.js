@@ -9,17 +9,19 @@ Page({
   data: {
     catList:[],  //存放侧边栏的数据
     chilireList:[],  //存放右边的数据
-    catIndex:0
+    catIndex:0  //被激活的索引
   },
   
   Cats:[],  //全局数据 页面是拿不到的 只是用来存放全部数据 为了然页面不卡
   handletap(e){
     // console.log(e);
+    const catIndex =e.currentTarget.dataset.index  //获取到点击的那个item的索引
     this.setData({
-      catIndex:e.currentTarget.dataset.index
+      catIndex,  //赋值
+      chilireList:this.Cats[catIndex].children
     })
     
-  },
+  },  
 
   /**
    * 生命周期函数--监听页面加载
@@ -41,7 +43,7 @@ Page({
           //给左侧菜单栏赋值
           catList:this.Cats.map(v=>v.cat_name),
           //右边的内容
-          chilireList:this.Cats[0].children
+          chilireList:this.Cats[this.data.catIndex].children
         })
       })
       
