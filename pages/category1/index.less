@@ -1,0 +1,56 @@
+.warp{
+    display: flex;
+    height: calc(100vh - 80rpx);
+    /*左边菜单栏样式 */
+    .left{
+        width: 200rpx;
+        // background: pink;
+        overflow: auto;
+        font-size: 28rpx;
+        .leftItem{
+            height: 90rpx;
+            line-height: 90rpx;
+            text-align: center;
+        }
+    }
+    /* 右边商品内容样式 */
+    .right{
+        flex: 1;
+        // background: aqua;
+        overflow: hidden;
+        font-size: 28rpx;
+        /* 每一个样式 */
+        .goods_ground{
+            .goods_ground_title{
+                height: 80rpx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .goods_ground_list{
+                display: flex;
+                flex-wrap: wrap;
+                .goods_ground_content{
+                    text-align: center;
+                    width: 33.33%;
+                    
+                    .goods_img{
+                        width: 50%;
+                    }
+                    .goods_name{
+
+                    }
+                }
+            }
+        }
+
+    }
+
+    /*被激活的样式*/
+    .active{
+        color: var(--themeColor);
+        border-left: 2px solid var(--themeColor);
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+    }
+}
