@@ -21,7 +21,7 @@
               
         </view>
         <!-- 右边内容 -->
-        <view class="right">
+        <scroll-view scroll-y scroll-top="{{scrollTop}}" class="right">
             <!-- 右边每一个children -->
             <view 
             class="rightItem" 
@@ -56,7 +56,7 @@
                   
             </view>
               
-        </view>
+        </scroll-view>
     </view>
       
 </view>

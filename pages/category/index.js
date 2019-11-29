@@ -9,16 +9,18 @@ Page({
   data: {
     catList:[],  //存放侧边栏的数据
     chilireList:[],  //存放右边的数据
-    catIndex:0  //被激活的索引
+    catIndex:0,  //被激活的索引
+    scrollTop:0  //scroll-view 回到顶部
   },
   
   Cats:[],  //全局数据 页面是拿不到的 只是用来存放全部数据 为了然页面不卡
-  handletap(e){
+  handletap(e){  //点击菜单栏事件
     // console.log(e);
     const catIndex =e.currentTarget.dataset.index  //获取到点击的那个item的索引
     this.setData({
       catIndex,  //赋值
-      chilireList:this.Cats[catIndex].children
+      chilireList:this.Cats[catIndex].children, //渲染对应的列表
+      scrollTop:0  //scroll-view 回到顶部
     })
     
   },  
