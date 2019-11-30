@@ -33,12 +33,14 @@
             <!-- 商品列表 -->
             <view class="goods_ground_list">
                 <!-- 列表内容 -->
-                <view 
+                <navigator 
                 class="goods_ground_content"
                 wx:for="{{item1.children}}"
                 wx:for-item="item2"
                 wx:for-index="index2" 
-                wx:key='cat_id'>
+                wx:key='cat_id'
+                url="/pages/goods_list/index?cid={{item1.cat_id}}"
+                open-type="navigate">
                     <image 
                     class="goods_img" 
                     src="{{item2.cat_icon}}" 
@@ -46,9 +48,7 @@
                     <view class="goods_name">
                         {{item2.cat_name}}
                     </view>
-                      
-                </view>
-                  
+                </navigator>
             </view>
         </view>
           
