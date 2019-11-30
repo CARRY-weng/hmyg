@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "searchInput":"/components/search/searchInput"
+  },
+  "enablePullDownRefresh":true,
+  "backgroundTextStyle":"dark"
 }
