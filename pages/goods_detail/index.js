@@ -19,7 +19,7 @@ Page({
     //获取详情页面页面数据
     request({url:`goods/detail?goods_id=${options.goods_id}`})
     .then(res=>{
-      console.log(res.data.message);
+      // console.log(res.data.message);
       this.setData({
         goodsDetail:res.data.message
       })
