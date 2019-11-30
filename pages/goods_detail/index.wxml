@@ -1,2 +1,13 @@
-<!--pages/goods_detail/index.wxml-->
-<text>pages/goods_detail/index.wxml</text>
+<!-- 轮播图 开始 -->
+<swiper  indicator-dots autoplay circular>
+    <swiper-item 
+    wx:for='{{goodsDetail.pics}}'
+    wx:key='goods_id'>
+        <image 
+        class="goods_pics"
+        src="{{item.pics_mid}}" 
+        mode="widthFix" />
+    </swiper-item> 
+</swiper>
+  
+<!-- 轮播图 结束 -->

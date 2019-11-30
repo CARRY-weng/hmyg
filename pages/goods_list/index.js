@@ -55,7 +55,7 @@ Page({
       //处理默认图片
       res.data.message.goods.forEach(v=>{   //把获取到的数组遍历一遍 看看是否存在图片 没有的就给个默认图片
         if(!v.goods_small_logo){
-          v.goods_small_logo='https://ftp.bmp.ovh/imgs/2019/11/105609dd61ea28da.png'
+          v.goods_small_logo='https://ftp.bmp.ovh/imgs/2019/11/c3cc1f3774182b32.jpg'
         }
       })
 
