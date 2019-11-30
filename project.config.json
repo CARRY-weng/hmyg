@@ -65,6 +65,14 @@
 					"id": -1,
 					"name": "分类重新练习",
 					"pathName": "pages/category1/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "商品列表",
+					"pathName": "pages/goods_list/index",
+					"query": "cid=6",
 					"scene": null
 				}
 			]
