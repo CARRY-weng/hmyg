@@ -52,6 +52,13 @@ Page({
       url:'goods/search',
       data:this.Params
     }).then(res=>{
+      //处理默认图片
+      res.data.message.goods.forEach(v=>{   //把获取到的数组遍历一遍 看看是否存在图片 没有的就给个默认图片
+        if(!v.goods_small_logo){
+          v.goods_small_logo='https://ftp.bmp.ovh/imgs/2019/11/105609dd61ea28da.png'
+        }
+      })
+
       // console.log(res.data.message.goods);
       const {goods} = this.data  //为了上滑加载数据的时候是把新的数据拼接在旧数据里面
       this.setData({
