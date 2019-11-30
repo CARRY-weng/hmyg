@@ -3,7 +3,7 @@
 
 <navigator 
 class="goods_wrap" 
-url="" 
+url="/pages/goods_detail/index?goods_id={{item.goods_id}}" 
 open-type="navigate"
 wx:for='{{goods}}'
 wx:for-item='item'
