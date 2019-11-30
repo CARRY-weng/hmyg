@@ -1,3 +1,21 @@
+// 5 下拉刷新数据
+//   0 先触发下拉刷新事件  onPullDownRefresh
+//   1 当用户触发下拉刷新的时候 体验  ===  用户第一次打开 商品列表页面 
+//   2 思考
+//     1 先打开页面
+//     2 不断的加载下一页数据 加载第10页数据
+//       1 pagenum =10 
+//       2 页面的商品数据 很多  goods
+//     3 开始触发下拉刷新了 
+//       1 其实也是触发了一个事件
+//         1 数据重置 ！！ 
+//         2 goods =  第一页的10条数据即可
+//         3 pagenum=1
+//           goods=[]
+//           this.getList()
+
+
+
 import request from '../../utils/request'
 
 // pages/goods_list/index.js
@@ -7,7 +25,7 @@ Page({
     query:'',   //搜索关键字
     cid:-1,     //分类id
     pagenum:1,  //页码
-    pagesize:10  //页容量
+    pagesize:6 //页容量
   },
   /**
    * 页面的初始数据
@@ -69,11 +87,16 @@ Page({
     
   },
 
-  // //顶部下拉事件
-  // onPullDownRefresh(){
-  //   console.log('bbbbbbbbb');
+  //顶部下拉事件
+  onPullDownRefresh(){
+    // console.log('bbbbbbbbb');
+    this.Params.pagenum = 1; //刷新页面就是 重置数据 把页面改成1 把goods里面的数据情况 然后重新根据页数发送请求
+    this.setData({
+      goods:[]
+    })
+    this.getGoods()
     
-  // }
+  }
  
 })
 
