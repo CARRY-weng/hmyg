@@ -1,2 +1,13 @@
-<!--components/Tabbar/Tabbar.wxml-->
-<text>components/Tabbar/Tabbar.wxml</text>
+<!-- tabbar组件 -->
+<view calss='tabbar_warp'>
+    <view class="tabbar_tittle">
+        <view 
+        class="title_item {{index===currentIndex ? 'active' : ''}}" 
+        wx:for='{{tabbar_item}}'
+        wx:key='index'
+        bindtap='handleTap'
+        data-index='{{index}}'>{{item}}</view>
+    </view>
+    <view class="tabbar_content"></view>
+</view>
+  

@@ -31,7 +31,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goods:[]  //商品列表
+    goods:[],  //商品列表
+    tabbar_item:['综合','销量','价格'], //tabbar 栏显示的数据
+    currentIndex:0  //tabbar title 被激活的索引
   },
 
   /**
@@ -103,8 +105,21 @@ Page({
     })
     this.getGoods()
     
+  },
+
+  //从tabbar子组件传过来的 获取激活索引的事件 事件
+  handleCurrentIndex(e){
+    const {index} = e.detail
+    // console.log(e);
+    // console.log(index);
+    this.setData({
+      currentIndex:index  //将点击变更的激活状态的index 赋值
+    })
+    
   }
  
+
+
 })
 
 

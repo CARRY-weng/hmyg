@@ -1,6 +1,12 @@
-
+<!-- 搜索框 -->
 <searchInput></searchInput>
+<!-- tabbar组件 -->
+<Tabbar 
+tabbar_item='{{tabbar_item}}'
+currentIndex='{{currentIndex}}'
+bindcurrentIndex='handleCurrentIndex' ></Tabbar>
 
+<!-- 商品列表 -->
 <navigator 
 class="goods_wrap" 
 url="/pages/goods_detail/index?goods_id={{item.goods_id}}" 
