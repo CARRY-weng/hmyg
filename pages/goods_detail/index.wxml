@@ -6,7 +6,9 @@
         <image 
         class="goods_pics"
         src="{{item.pics_mid}}" 
-        mode="widthFix" />
+        mode="widthFix"
+        bindtap='handlePreviewImage'
+        data-src='{{item.pics_big}}' />
     </swiper-item> 
 </swiper>
 <!-- 轮播图 结束 -->
