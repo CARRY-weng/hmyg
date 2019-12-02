@@ -45,7 +45,7 @@ Page({
 
   onLoad: function (options) {
 
-  
+    
       
     
       
@@ -54,12 +54,14 @@ Page({
 
  
   onShow: function () {
-
+    
+    
     //判断一下本地存储中有没有收货地址   赋值给data中的address 然后在页面判断 如果address存在就显示按钮
     const address = wx.getStorageSync('address') || {};
     this.setData({
       address
     })
+    console.log(this.data.address);
   },
 
 

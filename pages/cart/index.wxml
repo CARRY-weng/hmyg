@@ -1,10 +1,22 @@
 <view class='address_view'>
     <!-- // 如果本地存储中没有地址 就显示按钮   这里的判断条件要加 .属性 因为就算是{} 布尔类型也是true -->
-    <button wx:if='{{!address.uesrName}}' bindtap='handleGetAddress'>
+    <button wx:if='{{!address.userName}}' bindtap='handleGetAddress'>
         获取收货地址
     </button>
-    <view wx:else>
-        {{address.uesrName}}
+    <view class="address_view" wx:else>
+        <view class="name_num">
+            <view class="userName">
+                收货人：{{address.userName}} 
+            </view>
+            <view class="num">
+                {{address.telNumber}} 
+            </view>
+        </view>
+        <view class="add">
+            {{address.provinceName}}{{address.cityName}}{{address.countyName}}{{address.detailInfo}}
+        </view>
+          
+          
     </view>
       
 </view>

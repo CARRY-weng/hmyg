@@ -1,1 +1,8 @@
-/* pages/cart/index.wxss */
+.address_view .address_view {
+  font-size: 26rpx;
+  padding: 15rpx;
+}
+.address_view .address_view .name_num {
+  display: flex;
+  justify-content: space-between;
+}
