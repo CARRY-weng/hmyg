@@ -54,6 +54,13 @@ swiper .goods_pics {
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+.btm_tools .tool_item button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
 .btm_tools .tool_item:nth-last-child(-n+2) {
   flex: 2;

@@ -26,7 +26,7 @@ Page({
 
   //点击轮播图 预览大图事件
   handlePreviewImage(e){
-    console.log(e);
+    // console.log(e);
     // 当前被点击的大图路径
     const current = e.currentTarget.dataset.src;
     // 要预览的整个图片列表

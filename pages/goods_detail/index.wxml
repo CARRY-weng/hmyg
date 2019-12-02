@@ -46,17 +46,19 @@
 <!-- 底部工具栏 开始 -->
 <view class="btm_tools">
     <view class="tool_item">
+        <button  open-type="contact" ></button>
         <text class="iconfont icon-kefu"></text>
         <view>客服</view>
     </view>
     <view class="tool_item">
+        <button  open-type="share" ></button>
         <text class="iconfont icon-yixianshi-"></text>
         <view>分享</view>
     </view>
-    <view class="tool_item">
+    <navigator class="tool_item" url="/pages/cart/index" open-type="switchTab">
         <text class="iconfont icon-gouwuche"></text>
         <view>购物车</view>
-    </view>
+    </navigator>
     <view class="tool_item">
         加入购物车
     </view>
@@ -65,5 +67,5 @@
     </view>
       
 </view>
-  
+    
 <!-- 底部工具栏 结束 -->
