@@ -8,6 +8,8 @@
         bindtap='handleTap'
         data-index='{{index}}'>{{item}}</view>
     </view>
-    <view class="tabbar_content"></view>
+    <view class="tabbar_content">
+        <slot></slot>
+  </view>
 </view>
   
