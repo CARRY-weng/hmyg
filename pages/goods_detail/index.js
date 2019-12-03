@@ -38,5 +38,36 @@ Page({
       
   },
 
+  //点击加入购物车按钮
+  handleAddCat(){
+    //  1 获取购物车的数组 在缓存中
+    let cats = wx.getStorageSync('cats') || [];
+    // 2 判断 当前的商品是否已经存在了
+    const index = cats.findIndex(v=>v.goods_id===this.data.goodsDetail.goods_id)
+    // 3 判断 当前的商品是否已经存在了
+    if(index===-1){
+      // 不存在 顺便添加一个 购买数量 属性！
+      cats.unshift({
+        ...this.data.goodsDetail,
+        num:1
+      })
+    }else{
+      //存在 执行数量++
+      cats[index].num++
+    }  
+     // 4 重新添加到缓存中
+     wx.setStorageSync('cats', cats);
+
+     //添加个提示窗口
+     wx.showToast({
+       title: '加入成功',
+       duration: 1500,
+       mask: true
+     });
+       
+       
+      
+  }
+
 
 })

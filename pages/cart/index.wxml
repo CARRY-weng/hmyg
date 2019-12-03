@@ -1,3 +1,4 @@
+<!-- 收货地址 开始 -->
 <view class='address_view'>
     <!-- // 如果本地存储中没有地址 就显示按钮   这里的判断条件要加 .属性 因为就算是{} 布尔类型也是true -->
     <button wx:if='{{!address.userName}}' bindtap='handleGetAddress'>
@@ -15,10 +16,63 @@
         <view class="add">
             {{address.provinceName}}{{address.cityName}}{{address.countyName}}{{address.detailInfo}}
         </view>
-          
+    </view>
+</view>
+<!-- 收货地址 结束 -->
+
+<!-- 购物车内容 开始 -->
+<view class="cats_view">
+    <view class="title">
+        购物车
+    </view>
+    <view class="cats_content">
+        <view class='cats_item' wx:for='{{cats}}' wx:key='index'>
+            <view class='check_view'>
+                <checkbox ></checkbox>
+            </view>
+            <view class='cats_img'>
+                <image src="{{item.goods_small_logo}}" mode="widthFix"/>
+            </view>
+            <view class='cats_info'>
+                <view class='goods_name'>
+                    {{item.goods_name}}
+                </view>
+                <view class='price_num'>
+                    <view class='goods_price'>
+                        ￥{{item.goods_price}}
+                    </view>
+                    <view class='num_view'>
+                        <view class='jianjian'>
+                            -
+                        </view>
+                        <view class='num'>
+                            {{item.num}}
+                        </view>
+                        <view class='jiajia'>
+                            +
+                        </view>
+                          
+                          
+                    </view>
+                      
+                      
+                </view>
+                  
+                  
+            </view>
+              
+              
+              
+        </view>
           
     </view>
+    <view class='allPrice'>
+        总价：￥
+    </view>
       
+        
 </view>
+  
+<!-- 购物车内容 结束 -->
   
 

@@ -40,7 +40,9 @@ Page({
  
   data: {
     //收货地址
-    address:{}
+    address:{},
+    //购物车内容
+    cats:[]
   },
 
   onLoad: function (options) {
@@ -61,7 +63,16 @@ Page({
     this.setData({
       address
     })
-    console.log(this.data.address);
+    // console.log(this.data.address);
+
+
+    //获取本地购物车内容
+    const cats = wx.getStorageSync('cats');
+    this.setData({
+      cats
+    })
+    console.log(cats);
+    
   },
 
 

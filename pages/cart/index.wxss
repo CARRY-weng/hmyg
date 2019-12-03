@@ -6,3 +6,70 @@
   display: flex;
   justify-content: space-between;
 }
+.cats_view .title {
+  font-size: 32rpx;
+  padding: 15rpx;
+  border-top: 1rpx solid var(--themeColor);
+  border-bottom: 1rpx solid var(--themeColor);
+}
+.cats_view .cats_content .cats_item {
+  display: flex;
+}
+.cats_view .cats_content .cats_item .check_view {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cats_view .cats_content .cats_item .cats_img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rpx;
+}
+.cats_view .cats_content .cats_item .cats_info {
+  flex: 3;
+  font-size: 24rpx;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  padding: 10rpx;
+}
+.cats_view .cats_content .cats_item .cats_info .goods_name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.cats_view .cats_content .cats_item .cats_info .price_num {
+  display: flex;
+  justify-content: space-between;
+}
+.cats_view .cats_content .cats_item .cats_info .price_num .num_view {
+  display: flex;
+}
+.cats_view .cats_content .cats_item .cats_info .price_num .num_view .jianjian {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #ccc;
+  width: 40rpx;
+  height: 40rpx;
+}
+.cats_view .cats_content .cats_item .cats_info .price_num .num_view .num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40rpx;
+  height: 40rpx;
+}
+.cats_view .cats_content .cats_item .cats_info .price_num .num_view .jiajia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #ccc;
+  width: 40rpx;
+  height: 40rpx;
+}

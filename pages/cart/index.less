@@ -1,25 +1,90 @@
 .address_view {
-
-
-    button {
-  
-    }
-  
     .address_view {
         font-size: 26rpx;
         padding: 15rpx;
         .name_num{
             display: flex;
             justify-content: space-between;
-            .userName{
-
-            }
-            .num{
-
-            }
-        }
-        .add{
 
         }
     }
-  }
+}
+
+.cats_view{
+    .title{
+        // color: var(--themeColor);
+        font-size: 32rpx;
+        padding: 15rpx;
+        border-top: 1rpx solid var(--themeColor);
+        border-bottom: 1rpx solid var(--themeColor);
+    }
+    .cats_content{
+        .cats_item{
+            display: flex;
+            .check_view{
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .cats_img{
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 5rpx;
+                image{
+
+                }
+            }
+            .cats_info{
+                flex: 3;
+                font-size: 24rpx;
+                overflow: hidden;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-around;
+                padding: 10rpx;
+                .goods_name{
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                }
+                .price_num{
+                    display: flex;
+                    justify-content: space-between;
+                    .goods_price{
+
+                    }
+                    .num_view{
+                        display: flex;
+                        .jianjian{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border: 1rpx solid #ccc;
+                            width: 40rpx;
+                            height: 40rpx;
+                        }
+                        .num{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 40rpx;
+                            height: 40rpx;
+                        }
+                        .jiajia{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border: 1rpx solid #ccc;
+                            width: 40rpx;
+                            height: 40rpx;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
