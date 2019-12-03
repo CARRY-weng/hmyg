@@ -73,3 +73,35 @@
   width: 40rpx;
   height: 40rpx;
 }
+.cats_view .btm_count_wrap {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 90rpx;
+  border-top: 1rpx solid #ccc;
+  background: white;
+}
+.cats_view .btm_count_wrap .allBox {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cats_view .btm_count_wrap .all_price_wrap {
+  flex: 3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20rpx;
+}
+.cats_view .btm_count_wrap .account {
+  flex: 2;
+  background: var(--themeColor);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

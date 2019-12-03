@@ -99,7 +99,7 @@ Page({
 
   //计算总价格的方法  以及全选框状态的设置
   countAll(cats){
-    console.log(cats);
+    // console.log(cats);
     
        /* 
   1 获取缓存中的购物车数组
@@ -205,7 +205,7 @@ Page({
   //全选框的点击事件
   handleItemAll(){
     //获取自己的选中状态
-    console.log('点击了全选');
+    // console.log('点击了全选');
     
     let {allChecked,cats} = this.data;
     allChecked=!allChecked; //点击就是自己状态取反
