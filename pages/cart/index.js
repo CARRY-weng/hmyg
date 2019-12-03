@@ -42,37 +42,32 @@ Page({
     //收货地址
     address:{},
     //购物车内容
-    cats:[]
+    cats:[],
+    // 商品的总价格
+    totalPrice: 0,
   },
 
   onLoad: function (options) {
 
-    
-      
-    
-      
   },
 
 
  
   onShow: function () {
-    
-    
     //判断一下本地存储中有没有收货地址   赋值给data中的address 然后在页面判断 如果address存在就显示按钮
     const address = wx.getStorageSync('address') || {};
     this.setData({
       address
     })
     // console.log(this.data.address);
-
-
     //获取本地购物车内容
-    const cats = wx.getStorageSync('cats');
+    const cats = wx.getStorageSync('cats') || [];
     this.setData({
       cats
     })
-    console.log(cats);
+    // console.log(cats);
     
+    this.countAll(cats)
   },
 
 
@@ -87,16 +82,104 @@ Page({
     
     const auth = (await getSetting()).authSetting["scope.address"];  //这个值可能是undefined 或者false
     // console.log(auth === false);
-    
     if(auth === false){
       // debugger;
       await openSetting()  //打开授权页面
     };
-
     const res = await chooseAddress()  // 获取地址
     //把数据存在本地存储中
     wx.setStorageSync('address', res);
       
+  },
+
+
+  //计算总价格的方法
+  countAll(cats){
+       /* 
+  1 获取缓存中的购物车数组
+  2 循环 
+    1 判断该商品的isChecked 是否为 true
+    2 获取每个商品的单价 * 要购买的数量
+    3 每个商品的总价 叠加计算 ++ 
+     */
+    let totalPrice = 0;
+    cats.forEach(v => {
+      if(v.isChecked){  //假如是选中的 就要计入总价格
+        totalPrice += v.goods_price * v.num
+      }
+    });
+    this.setData({
+      totalPrice
+    })
+    wx.setStorageSync('cats', cats);
+  },
+  //单个商品选择框的勾选与否的事件 
+  handleChecked(e){  
+    // console.log(e);
+    let {cats} = this.data;
+    let {index} = e.currentTarget.dataset;
+    cats[index].isChecked = !cats[index].isChecked
+    this.setData({
+      cats
+    });
+    wx.setStorageSync('cats', cats);
+    
+    this.countAll(cats) //重新计算总价格
+  },
+
+  //点击加减按钮事件
+  handleNumUpdate(e){
+    console.log(e);
+    let {cats} = this.data
+    const {index,unit} = e.currentTarget.dataset;  //获取对应索引和对应的unit
+    console.log(cats[index]);
+    if(unit===1 && cats[index].num>=cats[index].goods_number){
+      //当点击+号的时候 （unit===1 就是点了+号） 超过库存了 提示用户
+      wx.showToast({
+        title: '库存不足',
+        icon: 'none',
+        duration: 1500,
+        mask: true
+      });
+        
+    }else if(unit===-1 && cats[index].num===1){
+      //数量为1 但是点了-号(unit===-1就是点了减号)的时候就是要删除 问一下用户
+      wx.showModal({
+        title: '警告',
+        content: '您是否要删除该商品',
+        showCancel: true,
+        cancelText: '取消',
+        cancelColor: '#000000',
+        confirmText: '确定',
+        confirmColor: '#3CC51F',
+        success: (result) => {
+          if (result.confirm) {
+            //点击了确认删除 就是删除掉数组中的一项
+            cats.splice(index,1)
+            this.setData({  //然后把数组赋值回去
+              cats
+            });
+            wx.setStorageSync('cats', cats);  //更新缓存
+            this.countAll(cats) //重新计算总价格
+          }
+        },
+        fail: () => {},
+        complete: () => {}
+      });
+        
+
+    }else{
+      //正常情况 的加减
+      cats[index].num += unit;
+      this.setData({
+        cats
+      });
+      wx.setStorageSync('cats', cats);  //更新缓存
+      this.countAll(cats) //重新计算总价格
+    }
+
   }
+
+
 
 })

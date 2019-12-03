@@ -49,7 +49,8 @@ Page({
       // 不存在 顺便添加一个 购买数量 属性！
       cats.unshift({
         ...this.data.goodsDetail,
-        num:1
+        num:1,
+        isChecked:false   //添加是否被勾选属性
       })
     }else{
       //存在 执行数量++

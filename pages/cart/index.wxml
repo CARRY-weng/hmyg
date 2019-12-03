@@ -28,7 +28,10 @@
     <view class="cats_content">
         <view class='cats_item' wx:for='{{cats}}' wx:key='index'>
             <view class='check_view'>
-                <checkbox ></checkbox>
+                <checkbox-group bindchange="handleChecked" data-index='{{index}}'>
+                    <checkbox checked="{{item.isChecked}}"></checkbox>
+                </checkbox-group>
+                  
             </view>
             <view class='cats_img'>
                 <image src="{{item.goods_small_logo}}" mode="widthFix"/>
@@ -42,32 +45,28 @@
                         ￥{{item.goods_price}}
                     </view>
                     <view class='num_view'>
-                        <view class='jianjian'>
+                        <view class='jianjian'
+                        bindtap='handleNumUpdate'
+                        data-index='{{index}}'
+                        data-unit='{{-1}}'>
                             -
                         </view>
                         <view class='num'>
                             {{item.num}}
                         </view>
-                        <view class='jiajia'>
+                        <view class='jiajia' bindtap='handleNumUpdate'
+                        data-index='{{index}}'
+                        data-unit='{{1}}'>
                             +
                         </view>
-                          
-                          
                     </view>
-                      
-                      
                 </view>
-                  
-                  
-            </view>
-              
-              
-              
+            </view>  
         </view>
           
     </view>
     <view class='allPrice'>
-        总价：￥
+        总价：￥{{totalPrice}} 
     </view>
       
         
