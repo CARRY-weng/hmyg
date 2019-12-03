@@ -218,6 +218,39 @@ Page({
     });
     wx.setStorageSync('cats', cats);  //更新缓存
     this.countAll(cats) //重新计算总价格
+  },
+
+  //点击结算 跳转到结算页面
+  handlegoAccount(){
+    console.log('点击了结算');
+    //要先判断是不是有地址
+    if(!this.data.address.userName){
+      wx.showToast({
+        title: '请选择收货地址',
+        icon: 'none',
+        duration: 1500,
+        mask: true
+      });
+    }
+    //判断有勾选商品
+    let {cats} =this.data;
+    let isCheck = cats.filter(v=>{
+      return v.isChecked===true
+    });
+    if(!isCheck.length){
+      wx.showToast({
+        title: '请勾选要结算的商品',
+        icon: 'none',
+        duration: 1500,
+        mask: true
+      });
+      return
+    }
+
+    wx.navigateTo({
+      url: '/pages/pay/index'
+    });
+      
   }
 
 })

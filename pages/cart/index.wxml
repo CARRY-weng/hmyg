@@ -75,7 +75,7 @@
         <view class='all_price_wrap'>
             总价：￥{{totalPrice}}
         </view>
-        <view class='account'>
+        <view class='account' bindtap='handlegoAccount'>
             结算({{nums}})
         </view>
     </view>
