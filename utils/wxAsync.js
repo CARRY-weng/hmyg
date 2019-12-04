@@ -49,3 +49,37 @@ export const openSetting = ()=>{
           
     })
 }
+
+
+
+
+/**
+ * 执行登录
+ */
+export const login = () => {
+    return new Promise((resolve, reject) => {
+      wx.login({
+        timeout: 10000,
+        success: (result) => {
+          resolve(result);
+        }
+      });
+    })
+  }
+  
+  
+  /**
+   * 微信支付
+   */
+  export const requestPayment = (pay) => {
+    return new Promise((resolve, reject) => {
+      wx.requestPayment({
+        ...pay,
+        success: (result) => {
+          resolve(result);
+        }
+      });
+  
+    })
+  }
+  
