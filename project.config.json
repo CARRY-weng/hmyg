@@ -21,7 +21,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.3",
+	"libVersion": "2.9.0",
 	"appid": "wxfb52f2d7b2f6123a",
 	"projectname": "hmyg",
 	"debugOptions": {
@@ -93,6 +93,13 @@
 					"id": -1,
 					"name": "结算",
 					"pathName": "pages/pay/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索页面",
+					"pathName": "pages/search/index",
 					"scene": null
 				}
 			]
