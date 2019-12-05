@@ -1,3 +1,7 @@
+
+import request from '../../utils/request';
+let timeId = -1;  //先设定一个定时器id
+
 // pages/search/index.js
 Page({
 
@@ -5,62 +9,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list:[]  //搜索得到的列表
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
 
+
+  //搜索框的input事件  要根据输入的关键字发送请求
+  handleInput(e){
+    // console.log(e.detail.value);  //获取关键字
+    
+    let {value} =e.detail
+    //防抖
+    clearTimeout(timeId)  //清楚定时器  假如是在一秒内重新发送请求 就会把上一个定时器清除掉 然后再重新生成一个定时器 也就是把上一个请求请掉 然后再重新请求
+    timeId=setTimeout(() => {
+      
+      request({url:"goods/qsearch", data:{query:value} })
+      .then(res=>{
+        this.setData({
+          list:res.data.message
+        })
+        
+      })
+    }, 1000);
+    
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  
 })

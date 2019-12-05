@@ -1,2 +1,16 @@
-<!--pages/search/index.wxml-->
-<text>pages/search/index.wxml</text>
+<view class='search_view'>
+    <view class='input_view'>
+        <input class='Inp' bindinput='handleInput' type="text" placeholder="请输入">
+            
+        </input>
+        <button class='btn'>
+            取消
+        </button>
+    </view>
+    <navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}" open-type="navigate" wx:for='{{list}}' wx:key='goods_id'>
+        {{item.goods_name}}
+    </navigator>
+      
+</view>
+  
+  
