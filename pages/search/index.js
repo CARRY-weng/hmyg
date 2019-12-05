@@ -9,7 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[]  //搜索得到的列表
+    list:[],  //搜索得到的列表
+    inputValue:''  //输入框的数值
   },
 
 
@@ -33,6 +34,17 @@ Page({
     }, 1000);
     
   },
+
+  //取消事件
+  handleTap(){
+    // console.log('取消');
+    this.setData({
+      list:[] //将列表清空
+    });
+    this.setData({
+      inputValue:''
+    })
+  }
 
   
 })

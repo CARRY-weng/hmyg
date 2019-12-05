@@ -1,9 +1,8 @@
 <view class='search_view'>
     <view class='input_view'>
-        <input class='Inp' bindinput='handleInput' type="text" placeholder="请输入">
-            
+        <input class='Inp' bindinput='handleInput' type="text" placeholder="请输入" value='{{inputValue}}'>
         </input>
-        <button class='btn'>
+        <button class='btn' bindtap='handleTap'>
             取消
         </button>
     </view>
